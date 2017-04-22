@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bridge TSS.SharpedJs</title>
+	<script src="./output/customFuncs.js"></script>
+    <script src="./output/bridge.min.js"></script>
+    <script src="./output/tSS.sharpedJs.js"></script>
+	<link rel="stylesheet" type="text/css" href="./styles/gamePage.css">
+</head>
+<body style="font-family: cambria;">
+	<div style="text-align: right">
+		<a id="changeLangUrl" ">Switch to english</a>
+	</div>
+	<div style="text-align: left">
+		<a id="openManualUrl" href = "./manual.pdf">open manual</a>
+	</div>
+	
+	
+	
+	<table align="left">
+		<tr>
+		<td>
+			<div>
+				<canvas id="universeCanvas" style="width: 99%"></canvas>
+			</div>
+		</td>
+	
+		<td>
+			<div id="rightPanel" >
+				<details open>
+					<table>
+					<summary id="labelGameControls" >Game controls</summary>
+					<tr><td><input type="text" style="font-size: 100%; width: 12em;" id="genCellsCountTextBox" value='5'></td></tr>
+					<tr><td><input type="submit" style="font-size: 100%; width: 12em;" id="genCellsButton" ></td></tr>
+					<tr><td><input type="submit" style="font-size: 100%; width: 12em;" id="createUniverseButton"></td></tr>
+					<tr><td><input type="submit" style="font-size: 100%; width: 12em;" id="startButton"></td></tr>
+					<tr><td><input type="submit" style="font-size: 100%; width: 12em;" id="stopButton"></td></tr>
+					<tr><td><input type="submit" style="font-size: 100%; width: 12em;" id="clearFieldButton"></td></tr>
+					<tr><td><input type="submit" style="font-size: 100%; width: 12em;" id="genFoodButton"></td></tr>
+					<tr><td><input type="submit" style="font-size: 100%; width: 12em;" id="сonstsUnRedactorOpen"></td></tr>
+					<tr><td><span id="labelTimeout">Timeout</span><br><input type='range' id='timeoutSlider'  style="font-size: 100%; width: 10em;" value='0' min='0' max='2500'><span id="timeoutSpanId">0</span></td></tr>
+					</table>
+				</details>
+				<br>
+				<details>
+					<summary id="labelUniverseInfo">Universe Info</summary>
+					<p id="universeInfoParagraph" ></p>
+				</details>
+			</div>
+	    </td>
+		</tr>
+	</table>
+	
+	<!--<details id="universeSettingsSpoiler" >
+		<summary class="consts-redactor-label">Universe Settings</summary>
+		<div style="font:bold 14px Courier New;">
+			<table class="consts-redactor-table">
+			</table>
+		</div>
+	</details>-->
+	
+</body>
+</html>

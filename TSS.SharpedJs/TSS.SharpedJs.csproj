@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <NoStdLib>true</NoStdLib>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{715CE312-3B1A-42DD-9461-9B6ABCD32553}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TSS.SharpedJs</RootNamespace>
+    <AssemblyName>TSS.SharpedJs</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Another\AnotherSources.cs" />
+    <Compile Include="Another\LanguageHandler.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="Helpers\CookieManager.cs" />
+    <Compile Include="Helpers\MessageDivBox.cs" />
+    <Compile Include="Helpers\MinMaxInt.cs" />
+    <Compile Include="Helpers\NoInfoAttribute.cs" />
+    <Compile Include="Helpers\NumericValuesAttribute.cs" />
+    <Compile Include="Helpers\ParsebleAttribute.cs" />
+    <Compile Include="Helpers\UrlParamsManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharpedJs\ConstsUniversePresenter.cs" />
+    <Compile Include="SharpedJs\DrawerUniverse.cs" />
+    <Compile Include="SharpedJs\GameMainDispatcher.cs" />
+    <Compile Include="SharpedJs\GameOutputDispatcher.cs" />
+    <Compile Include="SharpedJs\GraphicsHelper.cs" />
+    <Compile Include="SharpedJs\IUniverseOutputUIElement.cs" />
+    <Compile Include="SharpedJs\UniverseInfoPresenter.cs" />
+    <Compile Include="SharpedJs\UniverseOutputUIElement.cs" />
+    <Compile Include="UniverseLogic\Cell.cs" />
+    <Compile Include="UniverseLogic\ConstsUniverse.cs" />
+    <Compile Include="UniverseLogic\Food.cs" />
+    <Compile Include="UniverseLogic\FoodType.cs" />
+    <Compile Include="UniverseLogic\Genome.cs" />
+    <Compile Include="UniverseLogic\IHasEnergy.cs" />
+    <Compile Include="UniverseLogic\MoveDirection.cs" />
+    <Compile Include="UniverseLogic\Universe.cs" />
+    <Compile Include="UniverseLogic\UniverseObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bridge\output\readme.txt" />
+    <Content Include="Bridge\www\demo.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bridge\bridge.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Bridge, Version=15.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.Core.15.7.0\lib\net40\Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bridge.Html5, Version=15.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.Html5.15.7.0\lib\net40\Bridge.Html5.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Bridge.Min.15.7.0\build\Bridge.Min.targets" Condition="Exists('..\packages\Bridge.Min.15.7.0\build\Bridge.Min.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Bridge.Min.15.7.0\build\Bridge.Min.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bridge.Min.15.7.0\build\Bridge.Min.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
